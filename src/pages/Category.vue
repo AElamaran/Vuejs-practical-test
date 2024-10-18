@@ -25,7 +25,6 @@
             <tr>
               <th scope="col">Category ID</th>
               <th scope="col">Category Name</th>
-              <th scope="col">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -63,8 +62,9 @@ export default {
   },
   methods: {
     categoryLoad() {
-      axios.get("http://127.0.0.1:8000/api/categories").then(({ data }) => {
+      axios.get("http://127.0.0.1:8000/api/category").then(({ data }) => {
         this.result = data;
+        console.log(data);
       });
     },
     save() {

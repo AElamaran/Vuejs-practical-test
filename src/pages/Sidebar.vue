@@ -1,17 +1,17 @@
 <template>
   <div class="sidebar bg-dark text-white p-4">
     <h4 class="text-center">Menu</h4>
-    <ul class="list-group">
-      <li>
+    <div>
+      <p>
         <router-link to="/home/tasks" class="nav-link text-white">Task Screen</router-link>
-      </li>
-      <li>
+      </p>
+      <p>
         <router-link to="/home/categories" class="nav-link text-white">Category Screen</router-link>
-      </li>
-      <li>
-        <button class="btn btn-link text-white logout-btn" @click="logout">Logout</button>
-      </li>
-    </ul>
+      </p>
+      <p>
+        <router-link to="/home/categories" class="nav-link text-white" @click="logout">Logout</router-link>
+      </p>
+  </div>
   </div>
 </template>
 
@@ -39,6 +39,8 @@ export default {
 .nav-link {
   padding: 10px 15px; /* Padding for links */
   border-radius: 4px; /* Rounded corners for better UX */
+  margin: 0;
+  font-size: 16px;
 }
 
 .nav-link:hover {

@@ -1,9 +1,7 @@
-<!-- for run : npm run dev -->
- <!-- to install vue package : npm create vuetify@latest -->
- <!-- install : npm install vue-router, npm i redaxios -->
+
 <template>
-  <div class="container d-flex justify-content-center align-items-center vh-100">
-    <div class="card p-4 shadow-sm w-100" style="max-width: 400px;">
+  <div class="login-container d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow-sm ">
       <h3 class="text-center mb-4">Login</h3>
       <form @submit.prevent="login" id="login-form">
         <div class="mb-3">
@@ -27,13 +25,13 @@
         </div>
         <div class="d-grid gap-2">
          
-          <!-- <button type="submit" class="btn btn-primary">Login</button> -->
-          <button type="button" class="btn btn-primary" @click="$router.push('/home')">Login</button>
+          <button type="submit" class="btn btn-primary">Login</button>
+          <!-- <button type="button" class="btn btn-primary" @click="$router.push('/home')">Login</button> -->
           
           <button type="button" class="btn btn-link" @click="$router.push('/register')">Register</button>
         </div>
         <div class="mt-2 text-center">
-          <!-- Forgot Password link -->
+          
           <button type="button" class="btn btn-link" @click="$router.push('/forgot-password')">Forgot Password?</button>
         </div>
       </form>
@@ -50,7 +48,7 @@ export default {
   methods: {
     login() {
       redaxios
-        .post('/api/login', { email: this.email, password: this.password })
+        .post('http://127.0.0.1:8000/api/login', { email: this.email, password: this.password })
         .then(() => this.$router.push('/home'))
         .catch(error => console.error(error));
     }
@@ -63,10 +61,18 @@ export default {
   min-height: 100vh;
 }
 
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .card {
   background-color: #0b0b0b;
   color: #fffcfc;
   border-radius: 8px;
+  width: 500px;
+  display: block !important;
 }
 
 .btn-link {
@@ -76,5 +82,10 @@ export default {
 
 .btn-link:hover {
   text-decoration: underline;
+}
+
+.container {
+    display: block !important;
+    width: 100%;
 }
 </style>

@@ -1,9 +1,8 @@
 <template>
-    <div class="container mt-5">
-      <div class="row justify-content-end">
-        <div class="col-md-6">
-          <h3 align="center">Forgot Password</h3>
-          <div class="form-area">
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+      <div class="card p-4 shadow-sm " >
+        <h3 class="text-center mb-4">Forgot Password</h3>
+          <div class="form-area">          
             <form @submit.prevent="resetPassword" id="forgot-password-form">
               <div class="row">
                 <div class="col-md-12">
@@ -16,21 +15,17 @@
                 </div>
               </div>
               <div class="row mt-4">
-                <div class="col-md-6 text-right">
+                <div class="col-md-12 text-center">
                   <button type="submit" class="btn btn-primary px-4">Reset Password</button>
-                </div>
-                <div class="col-md-6">
-                  <button type="button" class="btn btn-link p-0" @click="$router.push('/')">Login</button>
                 </div>
               </div>
               <div class="row mt-2">
-                <div class="col-md-6">
-                  <button type="button" class="btn btn-link p-0" @click="$router.push('/register')">Register</button>
-                </div>
+              <div class="col-md-12 d-flex justify-content-center">
+                <button type="button" class="btn btn-link p-0" @click="$router.push('/')">Login</button>
               </div>
+            </div>
             </form>
           </div>
-        </div>
       </div>
     </div>
   </template>
@@ -54,13 +49,16 @@
   
   <style scoped>
   .container {
-    padding-top: 50px; /* Adjusts forgot password form's top position */
+    padding-top: 50px; 
+    display: flex;
+    
   }
   
-  .form-area {
+  .card {
     padding: 20px;
     background-color: #0b0b0b;
     color: #fffcfc;
+    width: 400px;
   }
   
   .btn-link {
