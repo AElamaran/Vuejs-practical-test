@@ -1,5 +1,6 @@
 <template>
-  <div class="d-flex">
+  <div >
+    
     <Sidebar />
     <div class="content">
       <router-view /> <!-- This is where different pages are rendered -->
